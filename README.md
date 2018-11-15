@@ -94,5 +94,8 @@ aCell = aRow[j]
 
 ![](./src/assets/Fisher-Yates.png)
 
+## 参考资料
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+* [从JS到TS开发数独游戏(JS版)](https://www.imooc.com/learn/899)
+* [vue-cli文档](http://vuejs-templates.github.io/webpack/)
+* [vue-loader文档](http://vuejs.github.io/vue-loader)
