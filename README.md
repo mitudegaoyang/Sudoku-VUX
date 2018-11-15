@@ -43,9 +43,9 @@ npm test
 
 ## 界面及操作
 
-九宫格
+### 九宫格
 
-弹出数字面板
+### 弹出数字面板
 
 * 点击数字直接选用该数字填写当前格
 * 点击底部中央空白:清除当期格的数字
@@ -61,5 +61,38 @@ npm test
 ## 设计图
 
 ![](./src/assets/sudoku.png)
+
+## 数据结构
+
+### 数据结构 - 数组
+
+第1维，行，9个数组组成，每行是第二层数组
+
+第2维，格，9个数组组成
+
+![](./src/assets/structure.png)
+
+```vue
+aRow = matrix[i]
+aCell = aRow[j]
+
+<!--1-9，0-空白-->
+<!--0,"",null,undefined-->
+```
+
+## 游戏算法
+
+### 生成算法
+
+不可避免的会用到递归
+
+采用一个简单的算法，从数字1开始
+
+失败重算
+
+随机位置，采用Fisher-Yates洗牌算法
+
+![](./src/assets/Fisher-Yates.png)
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
