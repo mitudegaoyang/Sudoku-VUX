@@ -5,8 +5,9 @@
     <group>
       <div class="p10">
         <div class="borderBox">
-          <div class="row" v-for="(row, index) in data" :key="index">
-            <div class="matrix" v-for="(matrix, index) in row" :key="index">{{matrix}}</div>
+          <div class="row" v-for="(row, rowIndex) in data" :key="rowIndex">
+            <div class="matrix" :class="{ 'colGroupClasses': (colIndex%3===0), 'rowGroupClasses': (rowIndex%3===0) }"
+                 v-for="(matrix, colIndex) in row" :key="colIndex">{{matrix}}</div>
           </div>
         </div>
       </div>
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+  import _ from 'lodash'
   import { XHeader, Group, Flexbox, FlexboxItem, XButton, XDialog, Grid, GridItem, Confirm } from 'vux'
 
   export default {
@@ -160,7 +162,10 @@
       init () {
         var self = this
         self.data = self.makeMatrix()
-        self.data[0][1] = 2
+        _.each(self.data, function (v) {
+          console.log(v)
+        })
+//        self.data[0][1] = 2
         console.log(self.shuffle(self.test))
 //        console.log(self.$toolkit.shuffle(self.test))
       }
@@ -176,8 +181,8 @@
   .borderBox{
     margin: 0 auto;
     width: 315px;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
   }
   .row{
     height: 35px;
@@ -191,6 +196,12 @@
     line-height: 35px;
     text-align: center;
     box-sizing: border-box;
+  }
+  .rowGroupClasses{
+    border-top: 2px solid #000;
+  }
+  .colGroupClasses{
+    border-left: 2px solid #000;
   }
   .p10{
     padding: 10px;
