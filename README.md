@@ -94,6 +94,31 @@ aCell = aRow[j]
 
 ![](./src/assets/Fisher-Yates.png)
 
+### 检查算法
+
+按行、列、宫
+
+### 数据抽取
+
+> array as result
+
+抽取行数据，So easy
+
+抽取列数据，多转一个弯
+
+抽取宫数据，寻找关系
+
+> 计算方式如下
+
+![](./src/assets/coordinate.png)
+
+```vue
+<!--当获取了数组之后-->
+array = [1,2,3,4,5,6,7,8,9]
+<!--与字符串'123456789'比较是否全等-->
+array.join('') === '123456789'
+```
+
 ## 参考资料
 
 * [从JS到TS开发数独游戏(JS版)](https://www.imooc.com/learn/899)
