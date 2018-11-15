@@ -1,4 +1,4 @@
-# y
+# 基于VUX的数独
 
 > A Vue.js project
 
