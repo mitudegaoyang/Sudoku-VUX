@@ -43,17 +43,34 @@
           <grid-item v-for="i in 9" :key="i" @click.native="choose(i)">
             <span class="grid-center">{{i}}</span>
           </grid-item>
+          <grid-item @click.native="choose(-1)">
+            <span class="grid-center">?</span>
+          </grid-item>
+          <grid-item @click.native="choose(0)">
+            <span class="grid-center">清空</span>
+          </grid-item>
+          <grid-item @click.native="choose(10)">
+            <span class="grid-center">确认</span>
+          </grid-item>
         </grid>
       </div>
       <div @click="showScrollBox=false">
         <span class="vux-close"></span>
       </div>
     </x-dialog>
+    <confirm v-model="confirmType"
+             :title="confirmMsg"
+             @on-cancel="onCancel"
+             @on-confirm="onConfirm"
+             @on-show="onShow"
+             @on-hide="onHide">
+      <p style="text-align:center;">确定吗</p>
+    </confirm>
   </div>
 </template>
 
 <script>
-  import { XHeader, Group, Flexbox, FlexboxItem, XButton, XDialog, Grid, GridItem } from 'vux'
+  import { XHeader, Group, Flexbox, FlexboxItem, XButton, XDialog, Grid, GridItem, Confirm } from 'vux'
 
   export default {
     name: 'Game',
@@ -65,12 +82,15 @@
       XButton,
       XDialog,
       Grid,
-      GridItem
+      GridItem,
+      Confirm
     },
     data () {
       return {
         showScrollBox: false,
-        msg: '这是游戏页面',
+        confirmType: false,
+        confirmBtn: 0,
+        confirmMsg: '检查',
         data: [],
         test: [1, 2, 3, 4, 5, 6, 7, 8, 9]
       }
@@ -80,31 +100,57 @@
        * 检查
        */
       check () {
-        console.log('检查')
+        var self = this
+        self.confirmType = true
+        self.confirmBtn = 0
+        self.confirmMsg = '检查'
       },
       /**
        * 重置
        */
       reset () {
-        console.log('重置')
+        var self = this
+        self.confirmType = true
+        self.confirmBtn = 1
+        self.confirmMsg = '重置'
       },
       /**
        * 清理
        */
       clear () {
-        console.log('清理')
+        var self = this
+        self.confirmType = true
+        self.confirmBtn = 2
+        self.confirmMsg = '清理'
       },
       /**
        * 重建
        */
       rebuild () {
-        console.log('重建')
+        var self = this
+        self.confirmType = true
+        self.confirmBtn = 3
+        self.confirmMsg = '重建'
       },
       /**
        * 选择数值
        */
       choose (i) {
+        var self = this
         console.log(i)
+        self.showScrollBox = false
+      },
+      onCancel () {
+
+      },
+      onConfirm () {
+
+      },
+      onShow () {
+
+      },
+      onHide () {
+
       },
       /**
        * 初始化
