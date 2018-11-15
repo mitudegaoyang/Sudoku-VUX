@@ -4,8 +4,10 @@
     <!--九宫格-->
     <group>
       <div class="p10">
-        <div class="row" v-for="(row, index) in data" :key="index">
-          <div class="matrix" v-for="(matrix, index) in row" :key="index">{{matrix}}</div>
+        <div class="borderBox">
+          <div class="row" v-for="(row, index) in data" :key="index">
+            <div class="matrix" v-for="(matrix, index) in row" :key="index">{{matrix}}</div>
+          </div>
         </div>
       </div>
     </group>
@@ -171,16 +173,23 @@
 </script>
 
 <style>
+  .borderBox{
+    margin: 0 auto;
+    width: 315px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
   .row{
     height: 35px;
-    text-align: center;
   }
   .matrix{
     display: inline-block;
-    border: 1px solid #000;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
     width: 35px;
     height: 35px;
     line-height: 35px;
+    text-align: center;
     box-sizing: border-box;
   }
   .p10{
