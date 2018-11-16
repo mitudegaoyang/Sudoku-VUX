@@ -6,7 +6,7 @@
       <div class="p10">
         <div class="borderBox">
           <div class="row" v-for="(row, rowIndex) in data" :key="rowIndex">
-            <div class="matrix" :class="{ 'colGroupClasses': (colIndex%3===0), 'rowGroupClasses': (rowIndex%3===0) }"
+            <div class="matrix" :class="[{ 'colGroupClasses': (colIndex%3===0)},{ 'rowGroupClasses': (rowIndex%3===0) }]"
                  v-for="(matrix, colIndex) in row" :key="colIndex">{{matrix}}</div>
           </div>
         </div>
