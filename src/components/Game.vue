@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-header>数独游戏</x-header>
+    <x-header style="background-color:#000;">数独</x-header>
     <!--九宫格-->
     <group>
       <div class="p10">

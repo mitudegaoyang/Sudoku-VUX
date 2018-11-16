@@ -1,20 +1,22 @@
 <template>
   <div>
+    <x-header style="background-color:#000;" :left-options="{showBack: false}">首页</x-header>
     <div class="vux-demo">
       <img class="logo" src="../assets/vux_logo.png">
       <h1> </h1>
     </div>
-    <group title="cell demo">
-      <cell title="VUX" value="cool" is-link link="/game"></cell>
+    <group>
+      <cell title="开始" value="" is-link link="/game"></cell>
     </group>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { XHeader, Group, Cell } from 'vux'
 
 export default {
   components: {
+    XHeader,
     Group,
     Cell
   },
