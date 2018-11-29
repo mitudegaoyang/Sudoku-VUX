@@ -5,6 +5,9 @@
 
 import _ from 'lodash'
 
+/**
+ * 矩阵工具
+ */
 const matrixToolkit = {
   /**
    * 生成行
@@ -47,6 +50,13 @@ const matrixToolkit = {
 }
 
 /**
+ * 宫坐标系工具
+ */
+const boxToolkit = {
+  // TODO
+}
+
+/**
  * 下面的注入会报错：Cannot assign to read only property 'exports' of object '#<Object>'
  * https://www.cnblogs.com/joyco773/p/8688410.html
  * webpack打包的时候，可以在js文件中混用require和export。
@@ -55,5 +65,19 @@ const matrixToolkit = {
  * 解决办法就是统一改成ES6的方式编写即可.
  */
 
+// 工具集
+
+/**
+ * 声明类
+ */
+class Toolkit {
+  static get matrix () {
+    return matrixToolkit
+  }
+  static get box () {
+    return boxToolkit
+  }
+}
+
 // module.exports = matrixToolkit
-export default matrixToolkit
+export default Toolkit
