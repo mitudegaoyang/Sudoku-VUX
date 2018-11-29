@@ -119,6 +119,42 @@ array = [1,2,3,4,5,6,7,8,9]
 array.join('') === '123456789'
 ```
 
+### 脚本目录结构
+
+```
+Sudoku-VUX
+├── build                   # 项目配置
+├── config                  # 项目配置
+├── dist                    # 打包文件
+├── node_modules            # 插件资源
+├── src                     # 开发目录
+│   ├── assets              # 静态资源
+│   │   ├── images          # 图片资源
+│   │   └── style           # 公共样式
+│   ├── components          # 组件目录
+│   │   ├── Game            # 游戏页
+│   │   └── Home            # 入口页
+│   ├── router              # 路由配置
+│   │   └── index.js        # 配置文件
+│   ├── core                # 算法及数据结构相关脚本
+│   │   ├── toolkit.js      # 工具方法集
+│   │   ├── generator.js    # 生成数独结局方案
+│   │   ├── checker.js      # 检查数独解决方案
+│   │   ├── suduku.js       # 生成数独游戏
+│   │   └── util.js         # 公共脚本
+│   ├── ui                  # 界面相关脚本
+│   │   ├── grid.js         # 生成九宫格
+│   │   └── popupnumbers.js # 处理弹出的操作面板
+│   ├── App.vue             # 项目入口文件
+│   └── main.js             # 项目的核心文件
+├── static                  # 项目静态资源(图片、字体等)
+├── test                    # 初始测试目录
+├── .xxxx                   # 各类配置文件(包括语法配置，git配置等)
+├── index.html              # 首页入口文件(可添加一些meta信息或统计代码)
+├── package.json            # 项目配置文件
+└── README.md               # 项目说明文档(markdown格式)
+```
+
 ## 参考资料
 
 * [从JS到TS开发数独游戏(JS版)](https://www.imooc.com/learn/899)

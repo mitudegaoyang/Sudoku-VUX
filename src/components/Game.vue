@@ -167,7 +167,7 @@
         })
 //        self.data[0][1] = 2
         console.log(self.shuffle(self.test))
-//        console.log(self.$toolkit.shuffle(self.test))
+//        console.log(self.$core.shuffle(self.test))
       }
     },
     created () {
